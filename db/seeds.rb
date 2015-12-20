@@ -1,7 +1,12 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+Level.create(screen_type: 1280,level: "20/200", font_size: 571)
+Level.create(screen_type: 1280,level: "20/150", font_size: 428.25)
+Level.create(screen_type: 1280,level: "20/100", font_size: 285.5)
+Level.create(screen_type: 1280,level: "20/80", font_size: 228.4)
+Level.create(screen_type: 1280,level: "20/60", font_size: 171.3)
+Level.create(screen_type: 1280,level: "20/50", font_size: 142.75)
+Level.create(screen_type: 1280,level: "20/40", font_size: 114.2)
+Level.create(screen_type: 1280,level: "20/35", font_size: 99.925)
+Level.create(screen_type: 1280,level: "20/30", font_size: 85.65)
+Level.create(screen_type: 1280,level: "20/25", font_size: 71.375)
+Level.create(screen_type: 1280,level: "20/20", font_size: 57.1)
+Level.create(screen_type: 1280,level: "20/15", font_size: 42.825)
