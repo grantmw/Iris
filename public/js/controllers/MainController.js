@@ -1,31 +1,30 @@
 app.controller('MainController', ['$scope', '$http', function($scope, $http) {
 
-	var letters = ""
-	$scope.input = ""
+	var letters = "" 
+	$scope.input = "" //intialize input
+	$scope.fontSizes = [] //initialize fontSizes object
 	$scope.getFontSize = function(){
-		// $http.get('/levels')
-		$http.({
+		$http({
 			url: '/levels',
 			method: 'GET',
-			data: screen.width
+			params: {screen_width: screen.width}
 		})
-
 		.success(function(response){
-			$scope.fontSizes = response;
-			console.log(response)
+			$scope.fontSizes = response; //returning array of objects containing vision level and correspondings font-sizes
+			renderLetters()
+	     	$('#vision-text').css("font-size", $scope.fontSizes[0]["font_size"]+"px"); //Jquery code to update font sizes
 		})
 	}
 
 	$scope.getFontSize();
-	console.log($scope.fontSizes)
 
-	function Try(){
+	function Try(){ //declare Try object
 	  this.limit = 5;
 	  this.count = 0;
 	}
 
-	 var tries = new Try();
-	 var level = 10;
+	var tries = new Try();
+	var level = 0;
 
 	var renderLetters = function(){
 	  var screenSize = screen.width;
@@ -36,10 +35,11 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
 	    for( var i=0; i < 3; i++ )
 	        text += possible.charAt(Math.floor(Math.random() * possible.length));
 	    $scope.letters = text;
+	    document.getElementById("myForm").reset();
 	  } 
 	}
 
-	renderLetters()
+
 	console.log($scope.letters)
 
 	$scope.checker = function(){
@@ -49,8 +49,8 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
 	  	console.log($scope.letters + ' This is line 34')
 	    if($scope.input.toUpperCase() === $scope.letters){
 	      renderLetters(); //Rerender screen with new set of random letters
-	      $('#vision-text').css("font-size",100+"px"); //Jquery code to update font sizes
-	      level -= 1 ; //decriment to next vision level
+	      level += 1 ; //increment to next vision level
+	      $('#vision-text').css("font-size", $scope.fontSizes[level]["font_size"]+"px"); //Jquery code to update font sizes
 	      tries.count = 0; //reset count to zero for successful input
 	      console.log('Successful match')
 	      console.log(tries.level)
@@ -59,15 +59,13 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
 	    }
 	    else{ console.log('Input does not match')
 		    tries.count ++
+			renderLetters()
 		    console.log(tries.count)
 		}
-		if(level == 0){
+		if(level == 10){
 			console.log("vision level is 20/20")
-			level = 10
+			level = 0
 			tries.count = 0
-			if(){ //if user is logged in, post request to saved test of user profile
-				$location
-			}
 	      //Send data to server to save test results if user is logged in
 	      //Return and show results page
 	    }
