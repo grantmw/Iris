@@ -40,6 +40,12 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
 	        text += possible.charAt(Math.floor(Math.random() * possible.length));
 	    $scope.letters = text;
 	    document.getElementById("myForm").reset();
+	  }  
+	  if(screenSize == 414 ){
+	    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        var text = possible.charAt(Math.floor(Math.random() * possible.length));
+	    $scope.letters = text;
+	    document.getElementById("myForm").reset();
 	  } 
 	}
 
