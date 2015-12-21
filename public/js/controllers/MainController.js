@@ -27,12 +27,16 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
 	var level = 0;
 
 	var renderLetters = function(){
+	console.log(level)
 	  var screenSize = screen.width;
-	  if(screenSize == 1440){
+	  if(screenSize == 1440 || screenSize == 1280 ){
 	    var text = "";
 	    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-
-	    for( var i=0; i < 3; i++ )
+	    var limit = 5
+	    if (level < 2){
+	    	limit = 4
+	    }
+	    for( var i=0; i < limit; i++ )
 	        text += possible.charAt(Math.floor(Math.random() * possible.length));
 	    $scope.letters = text;
 	    document.getElementById("myForm").reset();
