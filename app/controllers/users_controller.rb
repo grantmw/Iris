@@ -3,15 +3,11 @@ require 'bcrypt'
 
 class UsersController < ApplicationController
 	def create
-		p params
-		p '*' * 100
-		p params["user"]
-		User.create(email: params["user"]["email"], password: params["user"]["password"], name: params["user"]["name"])
-	end
-
-	def new #Login Route
-		if User.find_by(email: params["user"]["email"])
-			user = User.find_by()	
+		user = User.new(email: params["user"]["email"], password: params["user"]["password"], name: params["user"]["name"])
+		if user.save
+			render :status => 202
+		else
+			render :status => 400
 		end
 	end
 end
