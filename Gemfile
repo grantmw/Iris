@@ -12,6 +12,7 @@ gem 'rest-client', '~> 1.8'
 gem 'json'
 gem "heroku"
 gem 'bcrypt'
+gem 'devise'
 
 gem 'rails_12factor', group: :production
 
