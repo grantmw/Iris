@@ -83,4 +83,8 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
 	  //If while loop finishes, limit has been reached.  Show results page and save results if user is logged in.
 	}
 
+	$scope.hello = function(){
+		console.log('Hello function in MainController')
+	}
+
 }]);

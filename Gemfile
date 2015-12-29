@@ -14,6 +14,10 @@ gem "heroku"
 gem 'bcrypt'
 gem 'devise'
 
+source "https://rails-assets.org" do
+  gem 'rails-assets-angular-devise'
+end
+
 gem 'rails_12factor', group: :production
 
 group :development, :test do

@@ -5,8 +5,8 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-	validates :email, presence: true, uniqueness: true
-	validates :hash_password, presence: true
+	# validates :email, presence: true, uniqueness: true
+	# validates :encrypted_password, presence: true
 
 	# include BCrypt //not sure if needed with Devise
 

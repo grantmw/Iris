@@ -36,3 +36,5 @@ Level.create(screen_type: 414,level: "20/30", font_size: 66)
 Level.create(screen_type: 414,level: "20/25", font_size: 55)
 Level.create(screen_type: 414,level: "20/20", font_size: 44)
 Level.create(screen_type: 414,level: "20/15", font_size: 33)
+
+User.create(email: "grant@gmail.com", encrypted_password: "111")
