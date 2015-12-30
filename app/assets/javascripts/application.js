@@ -1,0 +1,1 @@
+//= require angular-devise/lib/devise
