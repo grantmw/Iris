@@ -7,11 +7,7 @@
 .landing-container {
 }
 
-.main-header {
-	width: 100%;
-	height: 10%;
-	position: relative;
-}
+
 
 .welcome {
 
@@ -38,8 +34,109 @@
 	border-radius: 10%;
 }
 
-body {
+/*body {
 	width: 100%;
+	position: relative;
+	border: 2px solid red;
+}*/
+
+
+
+/*dropdown*/
+
+.main-header {
+	width: 100%;
+	position: relative;
+}
+
+.main-header nav {
+	height: 70px;
+}
+
+.main-header nav ul li {
+	list-style: none;
+	display: inline;
+	font-family:'Poiret One';
+	padding: 20px 25px;
+}
+
+.main-header nav ul a:link, .main-header nav ul a:visited {
+	display: inline-block;
+}
+
+.options {
+	position: absolute;
+	top: 1%;
+	right: 3%;
+}
+
+.logo {
+	display: inline-block;
+}
+
+
+.dropdown {
+	display: inline-block;
+	position: relative;
+	transition: all 0.3s ease-in-out 0s;
+}
+
+.dropdown a {
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+	text-decoration: none;
+
+}
+
+.dropdown > a {
+	color: #fff;
+}
+
+.dd-content {
+	position: absolute;
+	display: none;
+}
+
+.dd-content a {
+	padding: 12px 16px 12px 5px;
+	margin-left: 12px;
+	text-decoration: none;
+	box-shadow: 0 0 2px #c2c2d6;
+	background-color: #fff;
+	position: relative;
+	width: 90%;
+}
+
+.dd-content a:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0px;
+  left: 0;
+  background-color: #000;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.dd-content a:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+.dd-content a:hover {
+	background-color: #f1f1f1;
+}
+
+/*welcome*/
+
+body {
+	border: 2px solid red;
 	position: relative;
 }
 
@@ -48,6 +145,16 @@ body {
 	font-family: 'Rokkitt';
 	font-size: 350%;
 	color: #fff;
-	width: 75%;
-	margin: 22% 60% 0 auto;
+	width: 50%;
+	margin: 22% 0 0 10%;
+	display: inline-block;
+	border: 2px solid red;
 }
+
+.button {
+	position: absolute;
+	border: 2px solid red;
+	display: inline-block;
+	margin: 22% auto;
+}
+
