@@ -2,6 +2,27 @@
 	font-family: Courier;
 	letter-spacing: 100px;
 	text-align: center;
+	margin-top: 125px;
+	margin-bottom: 125px;
+}
+
+#input-form{
+	text-align: center;
+}
+
+#user-input{
+	width: 35%;
+	height: 5%;
+}
+
+#input-submit{
+	height: 5%;
+	width: 10%;
+	border-radius: 3px;
+	box-shadow: none;
+	background-color: #EF3E38;
+	color: #fff;
+	font-family: 'Candal', sans-serif;
 }
 
 .landing-container {
@@ -22,16 +43,17 @@
 
 .title {
 	position: absolute;
-	margin-top: 1%;
+	/*margin-top: 1%;*/
 	margin-left: 1%;	
 	text-align: center;
 	font-family: 'Poiret One';
 	font-weight: bold;
 	color: #fff;
-	width: 10%;
+	width: 8%;
+	min-width: 95px;
 	font-size: 350%;
 	border: 2px solid #fff;
-	border-radius: 10%;
+	border-radius: 5px;
 }
 
 /*body {
@@ -46,7 +68,9 @@
 
 .main-header {
 	width: 100%;
-	position: relative;
+	position: fixed;
+	top: 0px;
+	background-color: #EF3E38;
 }
 
 .main-header nav {
