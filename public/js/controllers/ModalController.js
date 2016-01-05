@@ -1,20 +1,31 @@
 app.controller('ModalController', ['$scope','$http', 'ModalService', function($scope, $http, ModalService){
 
-	$scope.show = function() {
+	$scope.showSignup = function() {
 	    ModalService.showModal({
 	        templateUrl: '../../components/signup.html',
 	        controller: "UserController"
 	    }).then(function(modal) {
 	        modal.element.modal();
 	        modal.close.then(function(result) {
-	            $scope.message = "You said " + result;
+	        	console.log(result)
+	            $scope.message = "You said " + result; //need to update
 	        });
 	    });
 	};
 
-	$scope.hello = function(){
-		console.log("Hello from function")
-	}
+	$scope.showLogin = function() {
+	    ModalService.showModal({
+	        templateUrl: '../../components/login.html',
+	        controller: "UserController"
+	    }).then(function(modal) {
+	        modal.element.modal();
+	        modal.close.then(function(result) {
+	        	console.log(result)
+	            $scope.message = "You said " + result; //need to update
+	        });
+	    });
+	};
+
 
 }])
 
