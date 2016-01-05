@@ -1,7 +1,7 @@
 app.controller('LandingController', ['$scope','$http', function($scope, $http){
 	$(document).ready(function(){
 	    $('.dropdown').on('click','a', function(event){
-	      event.preventDefault();
+	      // event.preventDefault(); //I took this out to make links in drop down work
 	      $(this).closest('.dd-content').css('display','none');
 	    });
 	    $('.dropdown').hover(
