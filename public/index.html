@@ -1,14 +1,25 @@
 <html>
 <head>
 	<title>IRIS</title>
+	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+	<!-- BOOTSTRAP DEPENDENCIES BELOW -->
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	<!-- BOOTSTRAP DEPENDENCIES ABOVE -->
+
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 	<script src="https://code.angularjs.org/1.2.28/angular-route.min.js"></script>
-	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script src="angular-modal-service.min.js"></script>
+	<!-- // <script src="https://code.angularjs.org/1.5.0-rc.0/angular-animate.min.js"></script> -->
 	<link rel='stylesheet' href='css/main_style.css' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Roboto:400,400italic,500,700,500italic,700italic' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Rokkitt:400,700' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Candal' rel='stylesheet' type='text/css'>
+
 </head>
 
 <body ng-app="app">
@@ -32,13 +43,13 @@
 							</div>
 						</li>
 						<li class="loginlogout">
-							<div class="loginlogout dropdown">
+							<div ng-controller="ModalController" class="loginlogout dropdown">
 								<a href="#/">User's Name &#8616</a>
 								<div class="dd-content">
 								 	<a href="#">Results</a>
 									<a href="#/signin">Login</a>
 									<a href="#">Logout</a>
-									<a href="#">Register</a>
+									<a ng-click="show()" href="">Register</a>
 								</div>
 							</div>
 						</li>
@@ -53,5 +64,7 @@
 <script src="js/app.js"></script>
 <script src="js/controllers/MainController.js"></script>
 <script src="js/controllers/LandingController.js"></script>
+<script src="js/controllers/ModalController.js"></script>
+<script src="js/controllers/UserController.js"></script>
 
 </html>

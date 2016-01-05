@@ -23,6 +23,9 @@ app.controller('LandingController', ['$scope','$http', function($scope, $http){
 	    );
 	});
 
+	$scope.hello = function(){
+		console.log("Hello from function")
+	}
 
 }])
 
