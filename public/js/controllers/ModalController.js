@@ -1,9 +1,10 @@
 app.controller('ModalController', ['$scope','$http', 'ModalService', '$cookies', function($scope, $http, ModalService, $cookies){
 
-	$scope.navBarlink = "Login/Register"
 
-	if($cookies.get("email")){
-		$scope.navBarLink = $cookies.get("email")
+	$scope.navBarLink = "Login/Register"
+
+	if($cookies.get('email')){
+		$scope.navBarLink = $cookies.get('email')
 	}
 
 	$scope.showSignup = function() {
