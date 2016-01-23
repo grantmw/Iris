@@ -47,16 +47,16 @@ app.controller('ModalController', ['$scope','$http', 'ModalService', '$cookies',
 		})
 	}
 
-	$('.direction').on('click', function(event) {
+	// $('.direction').on('click', function(event) {
 
-	    var target = $( "#direction" );
+	//     var target = $( "#direction" );
 
-	        event.preventDefault();
-	        $('html, body').animate({
-	            scrollTop: target.offset().top
-	        }, 1000);
+	//         event.preventDefault();
+	//         $('html, body').animate({
+	//             scrollTop: target.offset().top
+	//         }, 1000);
 
-	});
+	// });
 }])
 
 

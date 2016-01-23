@@ -49,11 +49,13 @@
 	font-family: 'Poiret One';
 	font-weight: bold;
 	color: #fff;
+	line-height: 100%;
 	width: 8%;
 	min-width: 95px;
 	font-size: 350%;
 	border: 2px solid #fff;
 	border-radius: 5px;
+	top: 10px;
 }
 
 /*body {

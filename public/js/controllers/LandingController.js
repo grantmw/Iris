@@ -39,6 +39,27 @@ app.controller('LandingController', ['$scope','$http', '$cookies', function($sco
 		console.log("Hello from function")
 	}
 
+	$('.directions').on('click', function(event) {
+
+	    var target = $( "#directions" );
+
+	        event.preventDefault();
+	        $('html, body').animate({
+	            scrollTop: target.offset().top-70
+	        }, 1000);
+
+	});
+	$('.why').on('click', function(event) {
+
+	    var target = $( "#why" );
+
+	        event.preventDefault();
+	        $('html, body').animate({
+	            scrollTop: target.offset().top-70
+	        }, 1000);
+
+	});
+
 }])
 
 
