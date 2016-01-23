@@ -14,7 +14,6 @@
 	background-image: url("../images/traintracks.jpg");
 	background-repeat: no-repeat;
 	background-position: center center;
-	background-attachment: fixed;
 	background-size: cover;
 	margin: 0px;
 	height: 100%;
@@ -136,8 +135,8 @@
 /*welcome*/
 
 body {
-	position: relative;
 	margin: 0;
+	border: 2px solid red;
 }
 
 .intro {
@@ -148,6 +147,7 @@ body {
 	width: 50%;
 	margin: 22% 0 0 10%;
 	display: inline-block;
+	border: 2px solid red;
 }
 
 .button {
@@ -162,5 +162,13 @@ body {
 	height: auto;
 	border-radius: 10px;
 	padding: 1% 1% 1% 1%;
+}
+
+/* why check vision */
+
+.why {
+	display: block;
+	height: 100%;
+	width: 100%;
 }
 
