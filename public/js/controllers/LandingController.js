@@ -24,9 +24,10 @@ app.controller('LandingController', ['$scope','$http', '$cookies', function($sco
 
 
 	    //Hide Login/Register links if cookie stored
-	    if($cookies.get("status")){
+	    if($cookies.get("loggedin")){
 	    	$("#login").css("display", "none")
 	    	$("#register").css("display", "none")
+	    	$(".loginlogout").find('a').first().html($cookies.get('email'))
 	    }
 	    else{
 	    	$("#logout").css("display", "none")

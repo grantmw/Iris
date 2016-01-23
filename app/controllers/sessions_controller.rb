@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
-	#login route
-
 	skip_before_action :verify_authenticity_token
+
+	#login route
 
 	def create
 		if user = User.find_by(email: params["email"])
@@ -19,9 +19,6 @@ class SessionsController < ApplicationController
 
 	def destroy
 		# session.destroy
-		p "*" * 30
-		p session[:id]
-		p "*" * 30
 		render nothing: true, status: 200
 	end
 end

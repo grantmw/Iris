@@ -15,7 +15,8 @@ app.controller('SigninController', ['$scope','close', '$http', '$cookies', funct
 		console.log(user)
 
 		$http.post('/sessions', user).success(function(response){
-			$cookies.put('status', 'true')
+			$cookies.put('loggedin', 'true')
+			$cookies.put('email', response['email'])
 			$(".loginlogout").find('a').first().html(response['email'])
 			$("#login").css("display", "none")
 			$("#register").css("display", "none")
