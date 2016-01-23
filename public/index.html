@@ -11,6 +11,7 @@
 	<!-- BOOTSTRAP DEPENDENCIES ABOVE -->
 
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-cookies.js"></script>
 	<script src="https://code.angularjs.org/1.2.28/angular-route.min.js"></script>
 	<script src="angular-modal-service.min.js"></script>
 	<!-- // <script src="https://code.angularjs.org/1.5.0-rc.0/angular-animate.min.js"></script> -->
@@ -37,19 +38,19 @@
 								<a href="/#/">Vision Checking &#8616</a>
 								<div class="dd-content">
 									<a href="/#/">Why</a>
-									<a href="/#/">Directions</a>
+									<a href="/#/" class="direction">Directions</a>
 									<a href="/#/test">Vision Test</a>
 								</div>
 							</div>
 						</li>
 						<li class="loginlogout">
 							<div ng-controller="ModalController" class="loginlogout dropdown">
-								<a href="#/">User's Name &#8616</a>
+								<a href="#/">Login/Register &#8616</a>
 								<div class="dd-content">
-								 	<a href="#">Results</a>
-									<a ng-click="showLogin()">Login</a>
-									<a href="#">Logout</a>
-									<a ng-click="showSignup()" href="">Register</a>
+								 	<a id="results" href="#">Results</a>
+									<a id="login" ng-click="showLogin()">Login</a>
+									<a id="logout" href="/#/" ng-click="logOut()">Logout</a>
+									<a id ="register" ng-click="showSignup()" href="">Register</a>
 								</div>
 							</div>
 						</li>
@@ -65,6 +66,7 @@
 <script src="js/controllers/MainController.js"></script>
 <script src="js/controllers/LandingController.js"></script>
 <script src="js/controllers/ModalController.js"></script>
-<script src="js/controllers/UserController.js"></script>
+<script src="js/controllers/RegistrationController.js"></script>
+<script src="js/controllers/SigninController.js"></script>
 
 </html>

@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ngRoute', 'angularModalService']);
+var app = angular.module('app', ['ngRoute', 'angularModalService', 'ngCookies']);
 
 app.config(function ($routeProvider){ $routeProvider
 	.when('/test',{
@@ -11,3 +11,4 @@ app.config(function ($routeProvider){ $routeProvider
 	})
 
 })
+

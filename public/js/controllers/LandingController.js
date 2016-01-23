@@ -1,4 +1,4 @@
-app.controller('LandingController', ['$scope','$http', function($scope, $http){
+app.controller('LandingController', ['$scope','$http', '$cookies', function($scope, $http, $cookies){
 	$(document).ready(function(){
 	    $('.dropdown').on('click','a', function(event){
 	      // event.preventDefault(); //I took this out to make links in drop down work
@@ -21,6 +21,17 @@ app.controller('LandingController', ['$scope','$http', function($scope, $http){
 	        $(this).find('.dd-content').css('display','none');
 	      }
 	    );
+
+
+	    //Hide Login/Register links if cookie stored
+	    if($cookies.get("status")){
+	    	$("#login").css("display", "none")
+	    	$("#register").css("display", "none")
+	    }
+	    else{
+	    	$("#logout").css("display", "none")
+	    	$("#results").css("display", "none")
+	    }
 	});
 
 	$scope.hello = function(){
