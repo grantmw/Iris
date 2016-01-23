@@ -1,9 +1,9 @@
 app.controller('ModalController', ['$scope','$http', 'ModalService', '$cookies', function($scope, $http, ModalService, $cookies){
 
-	if($cookies['email']){
-		$scope.navBarLink = $cookies['email']
-	}else{
-		$scope.navBarlink = 'Login/Register'
+	$scope.navBarlink = "Login/Register"
+
+	if($cookies.get("email")){
+		$scope.navBarLink = $cookies.get("email")
 	}
 
 	$scope.showSignup = function() {
@@ -37,6 +37,7 @@ app.controller('ModalController', ['$scope','$http', 'ModalService', '$cookies',
 	$scope.logOut = function(){
 		$http.delete('/sessions/1').success(function(response){
 			$cookies.remove("loggedin");
+			$cookies.remove("email");
 			$("#login").css("display", "block")
 			$("#register").css("display", "block")
 			$("#logout").css("display", "none")
