@@ -5,10 +5,15 @@ app.config(function ($routeProvider){ $routeProvider
 		controller: 'MainController',
 		templateUrl: '../components/input.html'
 	})
+	.when('/:wildcard',{
+		controller: 'LandingController',
+		templateUrl: '../components/landing.html'
+	})
 	.when('/',{
 		controller: 'LandingController',
 		templateUrl: '../components/landing.html'
 	})
+
 
 })
 
