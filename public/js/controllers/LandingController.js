@@ -59,6 +59,11 @@ app.controller('LandingController', ['$scope','$http', '$cookies','$routeParams'
 	//         }, 1000);
 
 	// });
+	if ($routeParams.wildcard == null){
+		$('html, body').animate({
+	            scrollTop: $('#landing').offset().top
+	    }, 1000);
+	}
 	if ($routeParams.wildcard == 'directions'){
 		$('html, body').animate({
 	            scrollTop: $('#directions').offset().top-70
