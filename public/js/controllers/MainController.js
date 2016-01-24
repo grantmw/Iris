@@ -1,4 +1,4 @@
-app.controller('MainController', ['$scope', '$http', function($scope, $http) {
+app.controller('MainController', ['$scope', '$http', '$cookies', function($scope, $http, $cookies) {
 
 	var letters = "" 
 	$scope.input = "" //intialize input
@@ -11,6 +11,7 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
 		})
 		.success(function(response){
 			$scope.fontSizes = response; //returning array of objects containing vision level and correspondings font-sizes
+			console.log(response)
 			renderLetters()
 	     	$('#vision-text').css("font-size", $scope.fontSizes[0]["font_size"]+"px"); //Jquery code to update font sizes
 		})
@@ -27,13 +28,23 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
 	var level = 0;
 
 	var renderLetters = function(){
+	console.log(level)
 	  var screenSize = screen.width;
-	  if(screenSize == 1440){
+	  if(screenSize == 1440 || screenSize == 1280 ){
 	    var text = "";
 	    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-
-	    for( var i=0; i < 3; i++ )
+	    var limit = 5
+	    if (level < 2){
+	    	limit = 4
+	    }
+	    for( var i=0; i < limit; i++ )
 	        text += possible.charAt(Math.floor(Math.random() * possible.length));
+	    $scope.letters = text;
+	    document.getElementById("myForm").reset();
+	  }  
+	  if(screenSize == 414 ){
+	    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        var text = possible.charAt(Math.floor(Math.random() * possible.length));
 	    $scope.letters = text;
 	    document.getElementById("myForm").reset();
 	  } 
@@ -41,6 +52,7 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
 
 
 	console.log($scope.letters)
+	$scope.final_result = ""
 
 	$scope.checker = function(){
 
@@ -70,7 +82,28 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
 	      //Return and show results page
 	    }
 	  }
+	  else{
+	  	if(level>0){
+	  		$scope.final_result = $scope.fontSizes[level-1]["level"]
+	  	}
+	  	else{
+	  		$scope.final_result = ">20/200"	
+	  	}
+	  	console.log("this is the level of failure:" + $scope.fontSizes[level]["level"])
+	  }
 	  //If while loop finishes, limit has been reached.  Show results page and save results if user is logged in.
+	}
+
+	$scope.save_result = function(){
+		$http({
+			url: '/saved_tests',
+			method: 'POST',
+			params: {final_result: $scope.final_result, email: $cookies.get('email')}
+		})
+		.success(function(response){
+			console.log('posted saved test')
+			window.location = '/#/'
+		})
 	}
 
 }]);
