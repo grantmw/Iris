@@ -1,4 +1,4 @@
-app.controller('LandingController', ['$scope','$http', '$cookies', function($scope, $http, $cookies){
+app.controller('LandingController', ['$scope','$http', '$cookies','$routeParams', function($scope, $http, $cookies, $routeParams){
 	$(document).ready(function(){
 	    $('.dropdown').on('click','a', function(event){
 	      // event.preventDefault(); //I took this out to make links in drop down work
@@ -37,6 +37,42 @@ app.controller('LandingController', ['$scope','$http', '$cookies', function($sco
 
 	$scope.hello = function(){
 		console.log("Hello from function")
+	}
+
+	// $('.directions').on('click', function(event) {
+
+	//     var target = $( "#directions" );
+
+	//         // event.preventDefault();
+	//         $('html, body').animate({
+	//             scrollTop: target.offset().top-70
+	//         }, 1000);
+
+	// });
+	// $('.why').on('click', function(event) {
+
+	//     var target = $( "#why" );
+
+	//         // event.preventDefault();
+	//         $('html, body').animate({
+	//             scrollTop: target.offset().top-70
+	//         }, 1000);
+
+	// });
+	if ($routeParams.wildcard == null){
+		$('html, body').animate({
+	            scrollTop: $('#landing').offset().top
+	    }, 1000);
+	}
+	if ($routeParams.wildcard == 'directions'){
+		$('html, body').animate({
+	            scrollTop: $('#directions').offset().top-70
+	    }, 1000);
+	}
+	if ($routeParams.wildcard == 'why'){
+		$('html, body').animate({
+	            scrollTop: $('#why').offset().top-70
+	    }, 1000);
 	}
 
 }])
