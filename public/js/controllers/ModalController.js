@@ -1,6 +1,7 @@
-app.controller('ModalController', ['$scope','$http', 'ModalService', '$cookies', function($scope, $http, ModalService, $cookies){
+app.controller('ModalController', ['$scope','$http', 'ModalService', '$cookies', '$location', function($scope, $http, ModalService, $cookies, $location){
 
-
+	$scope.userResults = $cookies.getObject('results')
+	console.log($scope.userResults)
 	$scope.navBarLink = "Login/Register"
 
 	if($cookies.get('email')){
@@ -47,16 +48,6 @@ app.controller('ModalController', ['$scope','$http', 'ModalService', '$cookies',
 		})
 	}
 
-	// $('.direction').on('click', function(event) {
-
-	//     var target = $( "#direction" );
-
-	//         event.preventDefault();
-	//         $('html, body').animate({
-	//             scrollTop: target.offset().top
-	//         }, 1000);
-
-	// });
 }])
 
 

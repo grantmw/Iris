@@ -1,6 +1,6 @@
 var app = angular.module('app', ['ngRoute', 'angularModalService', 'ngCookies']);
 
-app.config(function ($routeProvider){ $routeProvider
+app.config(function ($routeProvider, $locationProvider){ $routeProvider
 	.when('/results',{
 		controller: 'ResultsController',
 		templateUrl: '../components/results.html'
@@ -8,6 +8,10 @@ app.config(function ($routeProvider){ $routeProvider
 	.when('/test',{
 		controller: 'MainController',
 		templateUrl: '../components/input.html'
+	})
+	.when('/profile',{
+		controller: 'ModalController',
+		templateUrl: '../components/profile.html'
 	})
 	.when('/:wildcard',{
 		controller: 'LandingController',

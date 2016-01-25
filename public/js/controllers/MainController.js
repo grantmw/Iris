@@ -101,7 +101,7 @@ app.controller('MainController', ['$scope', '$http', '$cookies', function($scope
 			params: {final_result: $scope.final_result, email: $cookies.get('email')}
 		})
 		.success(function(response){
-			console.log('posted saved test')
+			$cookies.putObject('results', response);
 			window.location = '/#/'
 		})
 	}
