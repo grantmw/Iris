@@ -1,4 +1,4 @@
-app.controller('ModalController', ['$scope','$http', 'ModalService', '$cookies', '$location', function($scope, $http, ModalService, $cookies, $location){
+ app.controller('ModalController', ['$scope','$http', 'ModalService', '$cookies', '$location', function($scope, $http, ModalService, $cookies, $location){
 	//set array of saved tests for profile view
 	$scope.userResults = $cookies.getObject('results')
 
