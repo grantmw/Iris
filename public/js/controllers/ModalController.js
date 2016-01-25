@@ -1,7 +1,7 @@
 app.controller('ModalController', ['$scope','$http', 'ModalService', '$cookies', '$location', function($scope, $http, ModalService, $cookies, $location){
-
+	//set array of saved tests for profile view
 	$scope.userResults = $cookies.getObject('results')
-	console.log($scope.userResults)
+
 	$scope.navBarLink = "Login/Register"
 
 	if($cookies.get('email')){
@@ -40,6 +40,7 @@ app.controller('ModalController', ['$scope','$http', 'ModalService', '$cookies',
 		$http.delete('/sessions/1').success(function(response){
 			$cookies.remove("loggedin");
 			$cookies.remove("email");
+			$cookies.remove("results");
 			$("#login").css("display", "block")
 			$("#register").css("display", "block")
 			$("#logout").css("display", "none")
