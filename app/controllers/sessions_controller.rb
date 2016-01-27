@@ -7,8 +7,11 @@ class SessionsController < ApplicationController
 		if user = User.find_by(email: params["email"])
 			if user.password == params[:password]
 				session[:id] = user.id
-				p session
-				render json: user, status: :created
+				obj = {
+					user: user,
+					results: SavedTest.where(user_id: user.id)
+				}
+				render json: obj, status: :created
 			else
 				render nothing: true, status: 400
 			end

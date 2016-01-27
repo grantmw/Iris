@@ -1,5 +1,6 @@
-app.controller('ModalController', ['$scope','$http', 'ModalService', '$cookies', function($scope, $http, ModalService, $cookies){
-
+ app.controller('ModalController', ['$scope','$http', 'ModalService', '$cookies', '$location', function($scope, $http, ModalService, $cookies, $location){
+	//set array of saved tests for profile view
+	$scope.userResults = $cookies.getObject('results')
 
 	$scope.navBarLink = "Login/Register"
 
@@ -39,6 +40,7 @@ app.controller('ModalController', ['$scope','$http', 'ModalService', '$cookies',
 		$http.delete('/sessions/1').success(function(response){
 			$cookies.remove("loggedin");
 			$cookies.remove("email");
+			$cookies.remove("results");
 			$("#login").css("display", "block")
 			$("#register").css("display", "block")
 			$("#logout").css("display", "none")
@@ -47,16 +49,6 @@ app.controller('ModalController', ['$scope','$http', 'ModalService', '$cookies',
 		})
 	}
 
-	// $('.direction').on('click', function(event) {
-
-	//     var target = $( "#direction" );
-
-	//         event.preventDefault();
-	//         $('html, body').animate({
-	//             scrollTop: target.offset().top
-	//         }, 1000);
-
-	// });
 }])
 
 
