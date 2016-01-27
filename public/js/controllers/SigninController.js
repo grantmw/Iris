@@ -15,10 +15,11 @@ app.controller('SigninController', ['$scope','close', '$http', '$cookies', funct
 		console.log(user)
 
 		$http.post('/sessions', user).success(function(response){
+			console.log(response)
 			$cookies.put('loggedin', 'true')
 			$cookies.put('email', response['user']['email'])
 			$cookies.putObject('results', response['results']);
-			$(".loginlogout").find('a').first().html(response['email'])
+			$(".loginlogout").find('a').first().html(response['user']['email'])
 			$("#login").css("display", "none")
 			$("#register").css("display", "none")
 			$("#logout").css("display", "block")

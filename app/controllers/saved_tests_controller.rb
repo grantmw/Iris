@@ -3,6 +3,9 @@ require 'json'
 
 class SavedTestsController < ApplicationController
 	def create
+		p "8" * 100
+		p params
+		p "8" * 100
 		user = User.find_by(email: params['email'])
 		result = SavedTest.new(user_id: user.id, results_both: params['final_result'])
 		if result.save

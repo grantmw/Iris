@@ -259,5 +259,9 @@ ol {
 	color: blue;
 }
 
+.results {
+	z-index: 1000;
+	margin-top: 300px;
+}
 
 

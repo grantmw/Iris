@@ -95,6 +95,7 @@ app.controller('MainController', ['$scope', '$http', '$cookies', function($scope
 	}
 
 	$scope.save_result = function(){
+		console.log($scope.final_result)
 		$http({
 			url: '/saved_tests',
 			method: 'POST',

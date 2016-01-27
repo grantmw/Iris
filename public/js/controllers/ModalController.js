@@ -1,6 +1,8 @@
  app.controller('ModalController', ['$scope','$http', 'ModalService', '$cookies', '$location', function($scope, $http, ModalService, $cookies, $location){
 	//set array of saved tests for profile view
-	$scope.userResults = $cookies.getObject('results')
+	$scope.userResults = $cookies.getObject('results');
+	var a = $scope.userResults
+	console.log(a)
 
 	$scope.navBarLink = "Login/Register"
 
